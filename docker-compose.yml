@@ -1,0 +1,7 @@
+services:
+  steve-life-site:
+    build: .
+    container_name: steve-life-site
+    restart: unless-stopped
+    ports:
+      - "8090:80"
