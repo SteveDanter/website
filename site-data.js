@@ -29,7 +29,7 @@ window.SITE_PAGES = [
     "title": "Vauxhall Astra",
     "category": "cars",
     "excerpt": "Vauxhall Astra I owned a few of these, both estate and hatchback, all company cars",
-    "image": ""
+    "image": "media/2024/04/astra.jpg"
   },
   {
     "slug": "renault-laguna",
@@ -37,7 +37,7 @@ window.SITE_PAGES = [
     "title": "Renault Laguna",
     "category": "cars",
     "excerpt": "Renault Laguna 2.0d Dynamique All the bells and whistles",
-    "image": ""
+    "image": "media/2024/04/laguna.jpg"
   },
   {
     "slug": "cgi",
@@ -45,7 +45,7 @@ window.SITE_PAGES = [
     "title": "CGI",
     "category": "work",
     "excerpt": "I started working at CGI in October 2014",
-    "image": ""
+    "image": "media/2024/10/cgi.png"
   },
   {
     "slug": "bp",
@@ -250,7 +250,7 @@ window.SITE_PAGES = [
   {
     "slug": "the-journey-there",
     "file": "french-camping.html",
-    "title": "french camping over the years…",
+    "title": "French camping over the years…",
     "category": "travel",
     "excerpt": "",
     "image": "media/2024/07/lighthouse.png"
