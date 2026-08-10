@@ -247,6 +247,14 @@ window.SITE_PAGES = [
     "excerpt": "Welcome to my holiday adventures I've taken a couple of photos from my 2022 holidays to get a feel for web design Camping My boat Surfin' About Me I've not really travelled the world, Europe is about as far as I go, although I did go to Ken",
     "image": "media/2023/10/pxl_20230902_180712495.portrait.original2.jpg"
   },
+    {
+    "slug": "france-2026",
+    "file": "A-Tale-of-Two-Holidays.html",
+    "title": "France 2026",
+    "category": "travel",
+    "excerpt": "Three weeks exploring the Atlantic coast, Les Mathes and the Loire Valley.",
+    "image": "media/2026/06/RiverScene1.heic"
+  },
   {
     "slug": "the-journey-there",
     "file": "french-camping.html",

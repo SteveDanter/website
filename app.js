@@ -29,7 +29,7 @@ const preferredOrder = {
   bikes: ["suzukits100", "yamahasr250", "suzukigs400", "suzukigs550", "kawasakigpz", "suzukim800", "triumph1050gt", "triumph-tiger-sport", "suzuki-1050-vstrom", "hondaxl750", "new-bike"],
   cars: ["strada-2", "metro", "capri-2", "astramax-2", "vauxhall-astra", "primera-2", "santafe-2", "nissan-300zx", "renault-laguna", "citroen-c5"],
   work: ["army", "radius", "bp", "cgi"],
-  travel: ["the-journey-there", "home", "campsites", "ni"],
+  travel: ["the-journey-there", "home", "france-2023", "france-2026", "campsites", "ni"],
 };
 
 function ordered(category) {
