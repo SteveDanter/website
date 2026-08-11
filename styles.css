@@ -212,7 +212,7 @@ footer { padding: 4rem 3.2vw 2rem; background: var(--paper); }
 .story-layout aside a { margin-top: 1.5rem; text-decoration: none; }
 .wordpress-content { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.05rem, 1.35vw, 1.22rem); line-height: 1.75; overflow: hidden; }
 .wordpress-content p {
-  margin: 0 0 0.6em;
+  margin: 0 0 0.3em;
 }
 .wordpress-content > *:first-child { margin-top: 0; }
 .wordpress-content h1, .wordpress-content h2, .wordpress-content h3, .wordpress-content h4 { font-family: "Manrope", Arial, sans-serif; letter-spacing: -.035em; line-height: 1.1; margin: 3.5rem 0 1.2rem; }
