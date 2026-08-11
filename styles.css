@@ -210,15 +210,15 @@ footer { padding: 4rem 3.2vw 2rem; background: var(--paper); }
 .story-layout aside { position: sticky; top: 2rem; height: max-content; border-top: 1px solid; padding-top: 1rem; display: grid; gap: .3rem; font-size: .78rem; }
 .story-layout aside span { text-transform: uppercase; letter-spacing: .12em; font-size: .65rem; }
 .story-layout aside a { margin-top: 1.5rem; text-decoration: none; }
-.wordpress-content { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.05rem, 1.35vw, 1.22rem); line-height: 1.75; overflow: hidden; }
-.wordpress-content p {
+.story-content { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.05rem, 1.35vw, 1.22rem); line-height: 1.75; overflow: hidden; }
+.story-content p {
   margin: 0 0 0.3em;
 }
-.wordpress-content > *:first-child { margin-top: 0; }
-.wordpress-content h1, .wordpress-content h2, .wordpress-content h3, .wordpress-content h4 { font-family: "Manrope", Arial, sans-serif; letter-spacing: -.035em; line-height: 1.1; margin: 3.5rem 0 1.2rem; }
-.wordpress-content h2 { font-size: clamp(2.3rem, 4vw, 4rem); }
-.wordpress-content h3 { font-size: clamp(1.8rem, 3vw, 2.7rem); }
-.wordpress-content img {
+.story-content > *:first-child { margin-top: 0; }
+.story-content h1, .story-content h2, .story-content h3, .story-content h4 { font-family: "Manrope", Arial, sans-serif; letter-spacing: -.035em; line-height: 1.1; margin: 3.5rem 0 1.2rem; }
+.story-content h2 { font-size: clamp(2.3rem, 4vw, 4rem); }
+.story-content h3 { font-size: clamp(1.8rem, 3vw, 2.7rem); }
+.story-content img {
   width: auto;
   max-width: 100%;
   height: auto;
@@ -228,27 +228,104 @@ footer { padding: 4rem 3.2vw 2rem; background: var(--paper); }
   margin: 2.2rem auto;
   border-radius: .15rem;
 }
-.wordpress-content figure { max-width: 100% !important; margin: 2.5rem 0; }
-.wordpress-content figcaption { text-align: center; font: .75rem "DM Sans"; opacity: .7; }
-.wordpress-content .wp-block-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; align-items: start; }
-.wordpress-content .wp-block-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .8rem; }
-.wordpress-content .wp-block-gallery figure { margin: 0; }
-.wordpress-content .wp-block-gallery figure {
+.story-content figure { max-width: 100% !important; margin: 2.5rem 0; }
+.story-content figcaption { text-align: center; font: .75rem "DM Sans"; opacity: .7; }
+.story-content .wp-block-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; align-items: start; }
+.story-content .wp-block-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .8rem; }
+.story-content .wp-block-gallery figure { margin: 0; }
+.story-content .wp-block-gallery figure {
   min-height: 280px;
   display: grid;
   place-items: center;
   background: rgba(23,23,19,.035);
 }
-.wordpress-content .wp-block-gallery img {
+.story-content .wp-block-gallery img {
   width: 100%;
   height: 280px;
   object-fit: contain;
   object-position: center;
   margin: 0;
 }
-.wordpress-content blockquote { border-left: 4px solid var(--orange); margin: 3rem 0; padding: .5rem 0 .5rem 2rem; font-size: 1.35em; }
-.wordpress-content a { text-decoration-color: var(--orange); text-underline-offset: .2rem; }
+.story-content blockquote { border-left: 4px solid var(--orange); margin: 3rem 0; padding: .5rem 0 .5rem 2rem; font-size: 1.35em; }
+.story-content a { text-decoration-color: var(--orange); text-underline-offset: .2rem; }
 .not-found h1 { font-size: clamp(3rem, 7vw, 7rem); }
+
+
+
+/* Clean story-page components — independent of WordPress */
+.story-content .content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1.2rem, 3vw, 2rem);
+  align-items: start;
+  margin: 2.5rem 0;
+}
+.story-content .content-cell { min-width: 0; }
+.story-content .photo-pair,
+.story-content .photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+.story-content .photo-gallery { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.story-content .content-grid figure,
+.story-content .photo-pair figure,
+.story-content .photo-gallery figure {
+  margin: 0;
+  padding: .7rem;
+  background: rgba(255,255,255,.32);
+}
+.story-content .content-grid img,
+.story-content .photo-pair img,
+.story-content .photo-gallery img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.story-content h2 {
+  position: relative;
+  padding-top: 1.2rem;
+}
+.story-content h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: .28rem;
+  background: var(--story-accent, var(--orange));
+}
+.story-layout aside { border-top-color: var(--story-accent, var(--ink)); }
+.story-layout aside a { text-decoration-color: var(--story-accent, var(--orange)); text-underline-offset: .2rem; }
+.story-theme-life { --story-accent: var(--orange); }
+.story-theme-bikes { --story-accent: #a83d19; }
+.story-theme-cars { --story-accent: #71951d; }
+.story-theme-travel { --story-accent: #4d89b7; }
+.story-theme-work { --story-accent: var(--orange); }
+.story-theme-life .story-hero { background: var(--cream); }
+.story-theme-bikes .story-hero { background: var(--orange); }
+.story-theme-cars .story-hero { background: var(--lime); }
+.story-theme-travel .story-hero { background: var(--blue); }
+.story-theme-work .story-hero { background: #25241f; color: white; }
+.story-theme-work .story-hero-image { background: #35342e; }
+.story-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 2rem 0; }
+.story-button {
+  display: inline-flex;
+  padding: .8rem 1.1rem;
+  border: 1px solid currentColor;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-weight: 600;
+}
+.story-cover { margin: 3rem 0; overflow: hidden; }
+
+@media (max-width: 720px) {
+  .story-content .photo-pair { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 1050px) {
   .hero { grid-template-columns: 1fr; }

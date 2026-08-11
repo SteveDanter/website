@@ -39,3 +39,8 @@ docker compose up -d --build
 The new site will be available at `http://steve-pi:8090`. WordPress remains available at `http://steve-pi:8088`.
 
 When the new site is approved, Nginx Proxy Manager can be changed to forward the chosen hostname to port `8090`.
+
+
+## Clean story structure
+
+The old WordPress block classes have been removed from the story pages. Story content now uses the site-owned `story-content` class, with simple helpers such as `content-grid`, `photo-pair`, and `photo-gallery`. The story hero colour follows the chapter palette used on the home page.
