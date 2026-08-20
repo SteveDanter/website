@@ -372,6 +372,10 @@ footer { padding: 4rem 3.2vw 2rem; background: var(--paper); }
   color: #f4f1e8;
   text-align: center;
   padding: clamp(4rem, 8vw, 7rem) 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .family-tree-cta .eyebrow {
@@ -400,6 +404,7 @@ footer { padding: 4rem 3.2vw 2rem; background: var(--paper); }
 .family-tree-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   padding: 1rem 1.5rem;
   background: #e7663c;
@@ -408,10 +413,46 @@ footer { padding: 4rem 3.2vw 2rem; background: var(--paper); }
   font-family: "Manrope", Arial, sans-serif;
   font-weight: 700;
   border-radius: 999px;
-  transition: transform .2s ease, background .2s ease;
 }
 
-.family-tree-button:hover {
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.1rem;
+  background: #171713;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.home-button:hover {
   transform: translateY(-2px);
-  background: #cf5733;
+}
+
+.family-tree-nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1.5rem 2rem 0;
+}
+
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.1rem;
+  background: #171713;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 700;
+  border-radius: 999px;
+  transition: transform .2s ease;
+}
+
+.home-button:hover {
+  transform: translateY(-2px);
 }
