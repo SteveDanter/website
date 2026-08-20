@@ -366,3 +366,52 @@ footer { padding: 4rem 3.2vw 2rem; background: var(--paper); }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+.family-tree-cta {
+  background: #171713;
+  color: #f4f1e8;
+  text-align: center;
+  padding: clamp(4rem, 8vw, 7rem) 2rem;
+}
+
+.family-tree-cta .eyebrow {
+  font-family: "Manrope", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .75rem;
+  margin-bottom: 1.2rem;
+}
+
+.family-tree-cta h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: .95;
+  margin: 0 0 1.5rem;
+}
+
+.family-tree-cta > p:not(.eyebrow) {
+  max-width: 40rem;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.family-tree-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: #e7663c;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 700;
+  border-radius: 999px;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.family-tree-button:hover {
+  transform: translateY(-2px);
+  background: #cf5733;
+}
