@@ -4,7 +4,7 @@ window.SITE_PAGES = [
     "file": "early-years.html",
     "title": "Charts July 1965",
     "category": "life",
-    "excerpt": "UK Charts for my birth month,1965 Number 1 single on 21st July 1965 Week ending 1st July 1965 1. Crying In The Chapel – Elvis Presley 2. I’m Alive – Hollies 3. The Price Of Love – Everly Brothers 4. Colours – Donovan 5. Looking Through The ",
+    "excerpt": "UK Charts for my birth month,1965 Number 1 single on 21st July 1965 Week ending 1st July 1965 1. Crying In The Chapel – Elvis Presley 2. I’m Alive – Hollies 3. The Price Of Love – Everly Brothers 4. Colours – Donovan ",
     "image": "media/2025/02/byrds.png"
   },
   {
@@ -12,7 +12,7 @@ window.SITE_PAGES = [
     "file": "ni.html",
     "title": "NI",
     "category": "travel",
-    "excerpt": "Some photos from my time in Northern Ireland, 1985 Out and about Our squad Taking a break Top of the Hill Crossing Points Ebb and Flow In the Morning",
+    "excerpt": "Some photos from my time in Northern Ireland",
     "image": "media/2024/12/image_editor_output_image-310901311-17333195995725999791230895811711.jpg"
   },
   {
@@ -20,7 +20,7 @@ window.SITE_PAGES = [
     "file": "new-bike.html",
     "title": "New Bike",
     "category": "bikes",
-    "excerpt": "Which one will be next… BMW F900XR I test rode the F800GS, which I initially liked, and it was fantastic. However, upon returning to the showroom, I spotted the XR. It offered the upright seating position I've come to prefer, yet it seemed ",
+    "excerpt": "Which one will be next… BMW F900XR I test rode the F800GS, which I initially liked, and it was fantastic. However, upon returning to the showroom, I spotted the XR. It offered the upright seating position I've come to prefer",
     "image": "media/2024/11/bmw.png"
   },
   {
@@ -44,7 +44,7 @@ window.SITE_PAGES = [
     "file": "cgi.html",
     "title": "CGI",
     "category": "work",
-    "excerpt": "I started working at CGI in October 2014",
+    "excerpt": "I started working at CGI in October 2014 and as I write am still gainfully employed there",
     "image": "media/2024/10/cgi.png"
   },
   {
@@ -52,7 +52,7 @@ window.SITE_PAGES = [
     "file": "bp.html",
     "title": "BP",
     "category": "work",
-    "excerpt": "After the Army and before CBSL I filled the gap with working part time in the BP petrol station in Bridgend. I could only work 3 shifts a week otherwise I wouldn't be able to collect my dole money too. Majid the owner was a great, part of t",
+    "excerpt": "After the Army and before CBSL I filled the gap with working part time in the BP petrol station in Bridgend. I could only work 3 shifts a week otherwise I wouldn't be able to collect my dole money too",
     "image": "media/2024/10/bp.png"
   },
   {
@@ -60,7 +60,7 @@ window.SITE_PAGES = [
     "file": "radius.html",
     "title": "Radius",
     "category": "work",
-    "excerpt": "CBSL, Radius CBSL, Radius Professional, Radius or Practice Net – the company went through quite a few name changes over the years. I started with CBSL on March 1st 1987 following a short stint at the petrol station. I was second choice behi",
+    "excerpt": "CBSL, Radius CBSL, Radius Professional, Radius or Practice Net – the company went through quite a few name changes over the years. I started with CBSL on March 1st 1987 and finally called it a day in October 2014 to start working for CGI in Bridgend",
     "image": "media/2024/10/image.png"
   },
   {
@@ -68,7 +68,7 @@ window.SITE_PAGES = [
     "file": "army.html",
     "title": "Army",
     "category": "work",
-    "excerpt": "When I left school I tried at all the usual suspects for an apprenticeship, Ford, Sony, Hawker Siddley etc. but as a very shy, introverted 16 year old I didn't get very far. One day when my father and I were in Cardiff and he suggested a tr",
+    "excerpt": "When I left school I tried at all the usual suspects for an apprenticeship, Ford, Sony, Hawker Siddley etc. but as a very shy, introverted 16 year old I didn't get very far",
     "image": "media/2024/10/sapper1.png"
   },
   {
@@ -76,7 +76,7 @@ window.SITE_PAGES = [
     "file": "citroen-c5.html",
     "title": "Citroen C5",
     "category": "cars",
-    "excerpt": "3.0HDi V6 Exclusive 5d Auto 2011 Bought this one to use primarily as a company car and what a car it was. 3.0l V6 240HP. 0 -60 in 7.6 seconds, 150mph top speed. It could burn off boy racers…with my caravan attached lol I kept it for about 1",
+    "excerpt": "3.0HDi V6 Exclusive 5d Auto 2011 Bought this one to use primarily as a company car and what a car it was. 3.0l V6 240HP. 0 -60 in 7.6 seconds, 150mph top speed. It could burn off boy racers…with my caravan attached lol",
     "image": "media/2024/04/citroen.jpg"
   },
   {
@@ -84,7 +84,7 @@ window.SITE_PAGES = [
     "file": "my-bikes-and-cars.html",
     "title": "Me, my bikes and my cars",
     "category": "life",
-    "excerpt": "Me, Me, Me… And so, with this website, I welcome you to a little insight to my world… And this is where I should begin. At the beginning of my time… OK, just, picture it – it was the summer of ’65, the sun must have been shining and it happ",
+    "excerpt": "Me, Me, Me… And so, with this website, I welcome you to a little insight to my world… of course this is where I should begin. At the beginning of my time… OK, just, picture it – it was the summer of '65, the sun must have been shining, the birds must have been singing, and I was born in Maesteg General Hospital, on 21st July 1965. I was a healthy baby, and I was a happy baby, and I was a happy child, and I was a happy teenager, and I was a happy adult…",
     "image": "media/2025/02/llangeinormast.png"
   },
   {
@@ -92,7 +92,7 @@ window.SITE_PAGES = [
     "file": "campsites.html",
     "title": "Campsites",
     "category": "travel",
-    "excerpt": "Camping… These days I almost always go to the west coast of France. When people ask which part I go to I always describe it as “about half way down, on the left coast by Bordeaux” . The picture below is from when me and Terry went on our fi",
+    "excerpt": "Camping… These days I almost always go to the west coast of France. When people ask which part I go to I always describe it as “about half way down, on the left coast by Bordeaux”",
     "image": "media/2024/04/lesmathes.png"
   },
   {
@@ -100,7 +100,7 @@ window.SITE_PAGES = [
     "file": "nissan-300zx.html",
     "title": "Nissan 300ZX",
     "category": "cars",
-    "excerpt": "Nissan 300ZX I had this for free off my good friend and ex cousin by marriage Simon. It had sat on his driveway for a good few years and had seen better days, but I thought it might be a good project for Liam and me. So we went up his house",
+    "excerpt": "Nissan 300ZX I had this for free off my good friend and ex cousin by marriage Simon. It had sat on his driveway for a good few years and had seen better days, but I thought it might be a good project for Liam and me to work on. I had a few ideas for it, but it was never going to be a show car, just a fun car to drive and enjoy.",
     "image": "media/2024/04/300z.jpg"
   },
   {
@@ -108,7 +108,7 @@ window.SITE_PAGES = [
     "file": "triumph-tiger-sport.html",
     "title": "Triumph Tiger Sport",
     "category": "bikes",
-    "excerpt": "Triumph Tiger 1050 Sport My first adventure bike, of course I had to get a lowered seat so I could touch the floor. I think I got different bones for the rear suspension too, so that would be doubly lowered. It's funny because I can't remem",
+    "excerpt": "Triumph Tiger 1050 Sport My first adventure bike, of course I had to get a lowered seat so I could touch the floor. I think I got different bones for the rear suspension too, so that would be doubly lowered",
     "image": "media/2024/04/20180609_150849-1.jpg"
   },
   {
@@ -116,7 +116,7 @@ window.SITE_PAGES = [
     "file": "suzuki-1050-vstrom.html",
     "title": "Suzuki 1050 VStrom",
     "category": "bikes",
-    "excerpt": "Suzuki 1050 V-Strom GT The cover photo is from when I went to Rhayader in mid Wales camping hence the excess luggage, needed to take everything to allow for any weather condition Wales could throw at me. And I used it all. Another Thunder R",
+    "excerpt": "Suzuki 1050 V-Strom GT The cover photo is from when I went to Rhayader in mid Wales camping hence the excess luggage, needed to take everything to allow for any weather condition Wales could throw at me. And I used it all. Another Thunder Road purchase",
     "image": "media/2024/03/cropped-packed.jpg"
   },
   {
@@ -124,7 +124,7 @@ window.SITE_PAGES = [
     "file": "honda-xl750.html",
     "title": "Honda XL750",
     "category": "bikes",
-    "excerpt": "Honda XL750 Transalp 2023 – 2025? Honda XL750 Transalp Possibly one of my favourite bikes, but also one of the worst I’ve ever owned. This bike is incredibly comfortable, making it ideal for long-distance rides—like the one to Royan in Fran",
+    "excerpt": "Honda XL750 Transalp 2023 – 2025? Honda XL750 Transalp Possibly one of my favourite bikes, but also one of the worst I’ve ever owned. This bike is incredibly comfortable, making it ideal for long-distance rides—like the one to Royan in France",
     "image": "media/2024/04/pxl_20231005_130503953.jpg"
   },
   {
@@ -132,7 +132,7 @@ window.SITE_PAGES = [
     "file": "on-foot-and-pedal-power.html",
     "title": "On foot and peddle power",
     "category": "life",
-    "excerpt": "The Early Years – Birth to Bike Me and my sister Susan, I'm the cute one on the right. Turns out the forecast for the day I was born was probably something like “rather unsettled, with showers or thunderstorms in places, not especially warm",
+    "excerpt": "The Early Years – Birth to Bike  Turns out the forecast for the day I was born was probably something like “rather unsettled, with showers or thunderstorms in places, not especially warm",
     "image": "media/2024/09/youngsteve.png"
   },
   {
@@ -140,7 +140,7 @@ window.SITE_PAGES = [
     "file": "santa-fe.html",
     "title": "Santa Fe",
     "category": "cars",
-    "excerpt": "Hyundai Santa Fe Loved this one too. Apparently this was one of the first, if not the first 2.0D sold in the UK, not too sure if this is just a myth or not though. This one had the intercooler breather vent thing on the bonnet, later ones d",
+    "excerpt": "Hyundai Santa Fe Loved this one too. Apparently this was one of the first, if not the first 2.0D sold in the UK, not too sure if this is just a myth or not though. This one had the intercooler breather vent thing on the bonnet, later ones didn't",
     "image": "media/2024/04/santafe.jpg"
   },
   {
@@ -156,7 +156,7 @@ window.SITE_PAGES = [
     "file": "astramax.html",
     "title": "AstraMax",
     "category": "cars",
-    "excerpt": "Bedford/Vauxhall Astra Max Van There couldn't have been too many car/vans left that you needed to change down a gear to get up a motorway incline, but this was one of them. A good workhorse though, I had two of these as company vans, sign w",
+    "excerpt": "Bedford/Vauxhall Astra Max Van There couldn't have been too many car/vans left that you needed to change down a gear to get up a motorway incline, but this was one of them. A good workhorse though, I had two of these as company vans",
     "image": "media/2024/04/astramax.jpg"
   },
   {
@@ -172,7 +172,7 @@ window.SITE_PAGES = [
     "file": "strada.html",
     "title": "Strada",
     "category": "cars",
-    "excerpt": "Fiat Strada 65cl My first car. I bought this off my parents, a bargain, about £400. In my mind this had the sportiest engine you could ever imagine, tyres so wide it was difficult to fit on a normal road, 145/65/15's I think and handling th",
+    "excerpt": "Fiat Strada 65cl My first car. I bought this off my parents, a bargain, about £400. In my mind this had the sportiest engine you could ever imagine, tyres so wide it was difficult to fit on a normal road, 145/65/15's I think, and a top speed of 90mph. I think I got it up to 85mph once, but it was a struggle. It was a great little car though, and I loved it.",
     "image": "media/2024/04/strada.jpg"
   },
   {
@@ -180,7 +180,7 @@ window.SITE_PAGES = [
     "file": "capri.html",
     "title": "Capri",
     "category": "cars",
-    "excerpt": "Ford Capri 2.0 L The salesman wouldn't let me test drive it because he didn't think I would be able to handle the power… Cracking sales technique looking back now. The photo isn't my car, same colour and model but I had steel wheels(painted",
+    "excerpt": "Ford Capri 2.0 L The salesman wouldn't let me test drive it because he didn't think I would be able to handle the power… Cracking sales technique looking back now. The photo isn't my car, same colour and model but I had steel wheels(painted white)",
     "image": "media/2024/04/capri.jpg"
   },
   {
@@ -204,7 +204,7 @@ window.SITE_PAGES = [
     "file": "yamaha-sr250.html",
     "title": "Yamaha SR250",
     "category": "bikes",
-    "excerpt": "1983 – 1985 Yamaha SR250 I don't actually have any photos of my own of this beast of a bike so here's one off the internet. What a step up At the time I thought this was the ultimate bike, it was mega powerful, 21hp giving 81mph maximum spe",
+    "excerpt": "Yamaha SR250 I don't actually have any photos of my own of this beast of a bike so here's one off the internet. What a step up. At the time I thought this was the ultimate bike, it was mega powerful, 21hp giving 81mph maximum speed",
     "image": "media/2024/03/yamahasr250_19827966810048130012464.jpg"
   },
   {
@@ -212,7 +212,7 @@ window.SITE_PAGES = [
     "file": "suzuki-gs550.html",
     "title": "Suzuki GS550",
     "category": "bikes",
-    "excerpt": "1987 – 1990 Suzuki GS550L My first 4 cylinder bike, this one came from Two Wheel Services too. I don't know why I bought it, it must have been 6 years old at the time, from memory it was a 1981 W reg bike. I was working for CBSL in Cardiff ",
+    "excerpt": "Suzuki GS550L My first 4 cylinder bike, this one came from Two Wheel Services too. I don't know why I bought it, it must have been 6 years old at the time, from memory it was a 1981 W reg bike. I was working for CBSL in Cardiff and it made a great commutet bike ",
     "image": "media/2024/03/gs550l.png"
   },
   {
@@ -220,7 +220,7 @@ window.SITE_PAGES = [
     "file": "suzuki-gs400.html",
     "title": "Suzuki GS400",
     "category": "bikes",
-    "excerpt": "1984 – 1987 Suzuki GS 400 …I was posted out to Roberts Barracks, Osnabrück, West Germany! We were all asked to fill out a couple of forms to indicate where we would like to be posted to after passing out from training regiment. I can't reme",
+    "excerpt": "Suzuki GS 400 …I was posted out to Roberts Barracks, Osnabrück, West Germany! We were all asked to fill out a couple of forms to indicate where we would like to be posted to after passing out from training regiment. My choice wasn't Germany...",
     "image": "media/2024/03/gs400.png"
   },
   {
@@ -228,7 +228,7 @@ window.SITE_PAGES = [
     "file": "kawasaki-gpz.html",
     "title": "Kawasaki GPz",
     "category": "bikes",
-    "excerpt": "Kawasaki GPZ 1000 RX Absolute Beast of a bike The primary driving force behind the purchase of this bike was when my good friend Vince, you remember him? I might have mentioned him a couple of times, he was my best mate from my time in Germ",
+    "excerpt": "Kawasaki GPZ 1000 RX Absolute Beast of a bike The primary driving force behind the purchase of this bike was when my good friend Vince, you remember him? He had a great plan 'Let's go round France on our bikes'",
     "image": "media/2024/03/gpz1000rx-2.png"
   },
   {
@@ -244,7 +244,7 @@ window.SITE_PAGES = [
     "file": "suzuki-ts100.html",
     "title": "Suzuki TS100",
     "category": "bikes",
-    "excerpt": "Suzuki TS100 My first bike! The good looking one in the middle is a 16 year old me, the other two are my sister Susan on the left and her friend Kim on the right. On 15th September 1981 aged 16 years and almost 2 months I joined the Army as",
+    "excerpt": "Suzuki TS100 My first bike! On 15th September 1981 aged 16 years and almost 2 months I joined the Army as an apprentice electrician based in Chepstow. I was there for 2 and a half years, and during that time I was allowed to have a bike, and so I bought this one",
     "image": "media/2024/03/ts100.png"
   },
   {
@@ -252,7 +252,7 @@ window.SITE_PAGES = [
     "file": "france-2023.html",
     "title": "France 2023",
     "category": "travel",
-    "excerpt": "Welcome to my holiday adventures I've taken a couple of photos from my 2022 holidays to get a feel for web design Camping My boat Surfin' About Me I've not really travelled the world, Europe is about as far as I go, although I did go to Ken",
+    "excerpt": "Welcome to my holiday adventures I've taken a couple of photos from my 2022 holidays to get a feel for web design. I've not really travelled the world, Europe is about as far as I go, although I did go to Kenya for my honeymoon, but that was a long time ago. I have been to France a few times, and I have been to Spain a few times, but I have never really been anywhere else. So, this is my little adventure in France, and I hope you enjoy it.",
     "image": "media/2023/10/pxl_20230902_180712495.portrait.original2.jpg"
   },
     {
@@ -276,7 +276,7 @@ window.SITE_PAGES = [
     "file": "about.html",
     "title": "About me(and my blog)…",
     "category": "life",
-    "excerpt": "This site was only ever meant to be a little project just for myself to try and keep my brain active. I was going to create a little website that I could use to practice web design on, using one of my trips to France as the theme, but the m",
+    "excerpt": "This site was only ever meant to be a little project just for myself to try and keep my brain active. I was going to create a little website that I could use to practice web design on, using one of my trips to France as the theme, but it has evolved over time to a history of my life revolving around my transport",
     "image": "media/2024/09/mebandw.jpg"
   }
 ];
