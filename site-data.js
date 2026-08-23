@@ -232,11 +232,11 @@ window.SITE_PAGES = [
     "image": "media/2024/03/gpz1000rx-2.png"
   },
   {
-    "slug": "SuzukiGSX1000GX",
+    "slug": "suzukigsx1000gx",
     "file": "suzuki-gsx1000gx.html",
     "title": "Suzuki GSX-S1000GX+",
     "category": "bikes",
-    "excerpt": "Suzuki GSX-S1000GX+ A bit of a mouthful but a very nice bike. I had been looking for a new bike for a while, I was looking for something that would be good for touring but also good for commuting and general riding around. I had been looking at some BMW's but by time you add all the extras necessary for todays pampered biker they proved to be too expensive,so I decided to look at the Suzuki GSX-S1000GX+. I test rode it and loved it, so I bought it. It's a nice bike, very comfortable and powerful, and it looks great too.",
+    "excerpt": "Suzuki GSX-S1000GX+ A bit of a mouthful but a very nice bike. I had been looking for a new bike for a while, I was looking for something that would be good for touring but also good for commuting and general riding around.",
     "image": "media/2026/09/suzukigsx1000-1.jpeg"
   },
   {
