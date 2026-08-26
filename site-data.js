@@ -29,7 +29,7 @@ window.SITE_PAGES = [
     "title": "Vauxhall Astra",
     "category": "cars",
     "excerpt": "Vauxhall Astra I owned a few of these, both estate and hatchback, all company cars",
-    "image": "media/2024/04/astra.jpg"
+    "image": "media/2024/04/astraestate.jpg"
   },
   {
     "slug": "renault-laguna",
