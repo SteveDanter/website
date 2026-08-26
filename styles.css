@@ -311,7 +311,45 @@ footer { padding: 4rem 3.2vw 2rem; background: var(--paper); }
 .story-theme-travel .story-hero { background: var(--blue); }
 .story-theme-work .story-hero { background: #25241f; color: white; }
 .story-theme-work .story-hero-image { background: #35342e; }
-.story-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 2rem 0; }
+
+.story-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2.5rem;
+}
+
+.story-button {
+  display: inline-flex;
+  align-items: right;
+  gap: 0.75rem;
+  padding: 0.9rem 1.4rem;
+
+  color: #fff;
+  background: #8b3f24;
+  border: 2px solid #8b3f24;
+  border-radius: 0.75rem;
+
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.story-button:hover {
+  background: #a84d2b;
+  border-color: #a84d2b;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.22);
+  transform: translateY(-2px);
+}
+
+.story-button:focus-visible {
+  outline: 3px solid #d9a441;
+  outline-offset: 4px;
+}
 .story-button {
   display: inline-flex;
   padding: .8rem 1.1rem;
