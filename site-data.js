@@ -19,7 +19,7 @@ window.SITE_PAGES = [
   {
     "slug": "new-bike",
     "file": "new-bike.html",
-    "title": "New Bike",
+    "title": "Next Bike?",
     "category": "bikes",
     "excerpt": "Which one will be next… BMW F900XR I test rode the F800GS, which I initially liked, and it was fantastic. However, upon returning to the showroom, I spotted the XR. It offered the upright seating position I've come to prefer",
     "image": "media/2024/11/bmw.png"
