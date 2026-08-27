@@ -29,8 +29,8 @@ function displayTitle(page) {
 const preferredOrder = {
   bikes: ["suzukits100", "yamahasr250", "suzukigs400", "suzukigs550", "kawasakigpz", "suzukim800", "triumph1050gt", "triumph-tiger-sport", "suzuki-1050-vstrom", "hondaxl750", "new-bike", "suzukigsx1000gx"],
   cars: ["strada-2", "metro", "capri-2", "astramax-2", "vauxhall-astra", "primera-2", "santafe-2", "nissan-300zx", "renault-laguna", "citroen-c5"],
-  work: ["army", "radius", "bp", "cgi"],
-  travel: ["the-journey-there", "home", "france-2023", "france-2026", "campsites", "ni"],
+  work: ["army", "bp", "radius", "cgi"],
+  travel: ["the-journey-there", "france-2023", "france-2026", "campsites"],
 };
 
 function ordered(category) {
@@ -92,6 +92,29 @@ function setupMenu() {
     button.setAttribute("aria-expanded", String(!open));
     document.getElementById("site-nav").classList.toggle("is-open", !open);
   });
+}
+const backToTopButton = document.querySelector(".back-to-top");
+
+if (backToTopButton) {
+  const updateBackToTopButton = () => {
+    backToTopButton.classList.toggle(
+      "is-visible",
+      window.scrollY > 500
+    );
+  };
+
+  window.addEventListener("scroll", updateBackToTopButton, {
+    passive: true
+  });
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  updateBackToTopButton();
 }
 
 setupMenu();

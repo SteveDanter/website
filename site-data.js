@@ -11,10 +11,11 @@ window.SITE_PAGES = [
     "slug": "ni",
     "file": "ni.html",
     "title": "NI",
-    "category": "travel",
+    "category": "archive",
     "excerpt": "Some photos from my time in Northern Ireland",
     "image": "media/2024/12/image_editor_output_image-310901311-17333195995725999791230895811711.jpg"
   },
+  
   {
     "slug": "new-bike",
     "file": "new-bike.html",
@@ -45,7 +46,7 @@ window.SITE_PAGES = [
     "title": "CGI",
     "category": "work",
     "excerpt": "I started working at CGI in October 2014 and as I write am still gainfully employed there",
-    "image": "media/2024/10/cgi.png"
+    "image": "media/2024/10/monitors.png"
   },
   {
     "slug": "bp",
@@ -61,7 +62,7 @@ window.SITE_PAGES = [
     "title": "Radius",
     "category": "work",
     "excerpt": "CBSL, Radius CBSL, Radius Professional, Radius or Practice Net – the company went through quite a few name changes over the years. I started with CBSL on March 1st 1987 and finally called it a day in October 2014 to start working for CGI in Bridgend",
-    "image": "media/2024/10/image.png"
+    "image": "media/2024/03/ticomputer.png"
   },
   {
     "slug": "army",
@@ -248,7 +249,7 @@ window.SITE_PAGES = [
     "image": "media/2024/03/ts100.png"
   },
   {
-    "slug": "home",
+    "slug": "france-2023",
     "file": "france-2023.html",
     "title": "France 2023",
     "category": "travel",
@@ -261,7 +262,7 @@ window.SITE_PAGES = [
     "title": "France 2026",
     "category": "travel",
     "excerpt": "Three weeks exploring the Atlantic coast, Les Mathes and the Loire Valley.",
-    "image": "media/2026/06/RiverScene1.heic"
+    "image": "media/2026/06/RiverScene1.jpg"
   },
   {
     "slug": "the-journey-there",
