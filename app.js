@@ -27,7 +27,7 @@ function displayTitle(page) {
 }
 
 const preferredOrder = {
-  life: ["on-foot-and-peddle-power", "my-bikes-and-cars"],
+  life: ["on-foot-and-pedal-power", "my-bikes-and-cars"],
   bikes: ["suzukits100", "yamahasr250", "suzukigs400", "suzukigs550", "kawasakigpz", "suzukim800", "triumph1050gt", "triumph-tiger-sport", "suzuki-1050-vstrom", "hondaxl750", "new-bike", "suzukigsx1000gx"],
   cars: ["strada-2", "metro", "capri-2", "astramax-2", "vauxhall-astra", "primera-2", "santafe-2", "nissan-300zx", "renault-laguna", "citroen-c5"],
   work: ["army", "bp", "radius", "cgi"],
@@ -37,9 +37,18 @@ const preferredOrder = {
 
 function ordered(category) {
   const order = preferredOrder[category] || [];
+
   return state.pages
     .filter((page) => page.category === category)
-    .sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
+    .sort((a, b) => {
+      const aIndex = order.indexOf(a.slug);
+      const bIndex = order.indexOf(b.slug);
+
+      const aOrder = aIndex === -1 ? Infinity : aIndex;
+      const bOrder = bIndex === -1 ? Infinity : bIndex;
+
+      return aOrder - bOrder;
+    });
 }
 
 function storyUrl(slug) {
