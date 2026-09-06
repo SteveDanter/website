@@ -1,7 +1,7 @@
 const state = { pages: window.SITE_PAGES || [] };
 
 const labels = {
-  life: "Life",
+  life: "life",
   bikes: "Motorbike",
   cars: "Car",
   work: "Working life",
@@ -27,17 +27,28 @@ function displayTitle(page) {
 }
 
 const preferredOrder = {
+  life: ["on-foot-and-pedal-power", "my-bikes-and-cars"],
   bikes: ["suzukits100", "yamahasr250", "suzukigs400", "suzukigs550", "kawasakigpz", "suzukim800", "triumph1050gt", "triumph-tiger-sport", "suzuki-1050-vstrom", "hondaxl750", "new-bike", "suzukigsx1000gx"],
   cars: ["strada-2", "capri-2", "metro", "astramax-2", "vauxhall-astra", "primera-2", "santafe-2", "nissan-300zx", "renault-laguna", "citroen-c5"],
   work: ["army", "bp", "radius", "cgi"],
   travel: ["the-journey-there", "france-2023", "france-2026", "campsites"],
+  
 };
 
 function ordered(category) {
   const order = preferredOrder[category] || [];
+
   return state.pages
     .filter((page) => page.category === category)
-    .sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
+    .sort((a, b) => {
+      const aIndex = order.indexOf(a.slug);
+      const bIndex = order.indexOf(b.slug);
+
+      const aOrder = aIndex === -1 ? Infinity : aIndex;
+      const bOrder = bIndex === -1 ? Infinity : bIndex;
+
+      return aOrder - bOrder;
+    });
 }
 
 function storyUrl(slug) {
