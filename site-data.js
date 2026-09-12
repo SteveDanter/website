@@ -256,13 +256,22 @@ window.SITE_PAGES = [
     "excerpt": "Welcome to my holiday adventures I've taken a couple of photos from my 2022 holidays to get a feel for web design. I've not really travelled the world, Europe is about as far as I go, although I did go to Kenya for my honeymoon, but that was a long time ago. I have been to France a few times, and I have been to Spain a few times, but I have never really been anywhere else. So, this is my little adventure in France, and I hope you enjoy it.",
     "image": "media/2023/10/pxl_20230902_180712495.portrait.original2.jpg"
   },
-    {
-    "slug": "france-2026",
+  {
+    "slug": "france-june-2026",
     "file": "A-Tale-of-Two-Holidays.html",
-    "title": "France 2026",
+    "title": "France June 2026",
     "category": "travel",
-    "excerpt": "Three weeks exploring the Atlantic coast, Les Mathes and the Loire Valley.",
+    "excerpt": "Second holiday of 2026, this time to Biscarrosse Lake, France. I had a great time, and I hope you enjoy the photos and the story of my holiday.",
     "image": "media/2026/06/RiverScene1.jpg"
+  },
+    
+  {
+    "slug": "france-sept-2026",
+    "file": "france-sept-2026.html",
+    "title": "France September 2026",
+    "category": "travel",
+    "excerpt": "Second holiday of 2026, this time to Biscarrosse Lake, France. I had a great time, and I hope you enjoy the photos and the story of my holiday.",
+    "image": "media/2026/09/bisca-sign.jpg"
   },
   {
     "slug": "the-journey-there",
