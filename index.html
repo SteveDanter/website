@@ -23,6 +23,7 @@
       <a href="#cars">Cars</a>
       <a href="#work">Work</a>
       <a href="#travel">Travel</a>
+      <a href="#" id="music-charts-link">Music Charts</a>
       <a href="about.html">About</a>
     </nav>
   </header>
@@ -201,5 +202,14 @@
   <button class="back-to-top" aria-label="Back to the top">
   ↑
 </button>
+<script>
+  const musicChartsLink = document.getElementById('music-charts-link');
+
+  if (window.location.protocol === 'file:') {
+    musicChartsLink.href = '../Charts/index.html';
+  } else {
+    musicChartsLink.href = 'https://stevedanter.github.io/Charts/';
+  }
+</script>
 </body>
 </html>
