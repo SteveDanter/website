@@ -261,7 +261,7 @@ window.SITE_PAGES = [
     "file": "A-Tale-of-Two-Holidays.html",
     "title": "France June 2026",
     "category": "travel",
-    "excerpt": "Second holiday of 2026, this time to Biscarrosse Lake, France. I had a great time, and I hope you enjoy the photos and the story of my holiday.",
+    "excerpt": "Two weeks, two locations. The first week at my favourite site, La Pinede and then a further week at a new,to me, site in the Loire Valley.",
     "image": "media/2026/06/RiverScene1.jpg"
   },
     
