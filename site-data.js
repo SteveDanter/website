@@ -276,9 +276,9 @@ window.SITE_PAGES = [
   {
     "slug": "the-journey-there",
     "file": "french-camping.html",
-    "title": "French camping over the years…",
+    "title": "Photo's of France",
     "category": "travel",
-    "excerpt": "",
+    "excerpt": "Some photo's I've taken over the years of sights that have grabbed my attention and piqued my interest while in France.",
     "image": "media/2024/07/lighthouse.png"
   },
   {
