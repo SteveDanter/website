@@ -41,13 +41,13 @@ window.SITE_PAGES = [
     "image": "media/2024/04/laguna.jpg"
   },
   {
-  "slug": "cgi",
-  "file": "cgi.html",
-  "title": "CGI",
-  "category": "work",
-  "excerpt": "I started working at CGI on 2 November 2015, moving from the small and familiar world of Practice Net into a very different corporate IT environment.",
-  "image": "media/2026/09/cgi-monkeys-1.png"
-},
+    "slug": "cgi",
+    "file": "cgi.html",
+    "title": "CGI",
+    "category": "work",
+    "excerpt": "I started working at CGI in October 2014 and as I write am still gainfully employed there",
+    "image": "media/2024/10/monitors.png"
+  },
   {
     "slug": "bp",
     "file": "bp.html",
@@ -57,13 +57,13 @@ window.SITE_PAGES = [
     "image": "media/2024/10/bp.png"
   },
   {
-  "slug": "radius",
-  "file": "radius.html",
-  "title": "Radius",
-  "category": "work",
-  "excerpt": "CBSL, Radius CBSL, Radius Professional, Radius or Practice Net – the company went through quite a few name changes over the years. I started with CBSL on 1 March 1987 and stayed through its various incarnations until leaving for CGI in 2015.",
-  "image": "media/2024/03/ticomputer.png"
-},
+    "slug": "radius",
+    "file": "radius.html",
+    "title": "Radius",
+    "category": "work",
+    "excerpt": "CBSL, Radius CBSL, Radius Professional, Radius or Practice Net – the company went through quite a few name changes over the years. I started with CBSL on March 1st 1987 and finally called it a day in October 2014 to start working for CGI in Bridgend",
+    "image": "media/2024/03/ticomputer.png"
+  },
   {
     "slug": "army",
     "file": "army.html",

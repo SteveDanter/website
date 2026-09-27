@@ -26,13 +26,59 @@ function displayTitle(page) {
   return displayNames[page.slug] || page.title;
 }
 
+/*
+ * This controls the order of stories within each chapter.
+ * It is used both by the homepage and by the Previous/Next
+ * navigation on individual story pages.
+ */
 const preferredOrder = {
-  life: ["on-foot-and-pedal-power", "my-bikes-and-cars"],
-  bikes: ["suzukits100", "yamahasr250", "suzukigs400", "suzukigs550", "kawasakigpz", "suzukim800", "triumph1050gt", "triumph-tiger-sport", "suzuki-1050-vstrom", "hondaxl750", "new-bike", "suzukigsx1000gx"],
-  cars: ["strada-2", "capri-2", "metro", "astramax-2", "vauxhall-astra", "primera-2", "santafe-2", "nissan-300zx", "renault-laguna", "citroen-c5"],
-  work: ["army", "bp", "radius", "cgi"],
-  travel: ["the-journey-there", "france-2023", "france-june-2026", "france-sept-2026", "campsites"],
-  
+  life: [
+    "on-foot-and-pedal-power",
+    "my-bikes-and-cars"
+  ],
+
+  bikes: [
+    "suzukits100",
+    "yamahasr250",
+    "suzukigs400",
+    "suzukigs550",
+    "kawasakigpz",
+    "suzukim800",
+    "triumph1050gt",
+    "triumph-tiger-sport",
+    "suzuki-1050-vstrom",
+    "hondaxl750",
+    "new-bike",
+    "suzukigsx1000gx"
+  ],
+
+  cars: [
+    "strada-2",
+    "capri-2",
+    "metro",
+    "astramax-2",
+    "vauxhall-astra",
+    "primera-2",
+    "santafe-2",
+    "nissan-300zx",
+    "renault-laguna",
+    "citroen-c5"
+  ],
+
+  work: [
+    "army",
+    "bp",
+    "radius",
+    "cgi"
+  ],
+
+  travel: [
+    "the-journey-there",
+    "france-2023",
+    "france-june-2026",
+    "france-sept-2026",
+    "campsites"
+  ],
 };
 
 function ordered(category) {
@@ -57,11 +103,17 @@ function storyUrl(slug) {
 
 function card(page, index) {
   const image = page.image || "media/2024/11/questionmark.png";
+
   return `
     <article class="story-card reveal">
       <a href="${storyUrl(page.slug)}" aria-label="Read ${page.title}">
-        <div class="card-image"><img src="${image}" alt="" loading="lazy"></div>
-        <div class="card-meta"><span>${String(index + 1).padStart(2, "0")}</span><span>${labels[page.category]}</span></div>
+        <div class="card-image">
+          <img src="${image}" alt="" loading="lazy">
+        </div>
+        <div class="card-meta">
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <span>${labels[page.category]}</span>
+        </div>
         <h3>${displayTitle(page)}</h3>
         <p>${page.excerpt}</p>
         <span class="card-arrow">Read the story →</span>
@@ -77,56 +129,197 @@ function renderHome() {
 
   document.querySelectorAll("[data-links]").forEach((container) => {
     const category = container.dataset.links;
+
     container.innerHTML = ordered(category)
-      .map((page) => `<a href="${storyUrl(page.slug)}"><span>${displayTitle(page)}</span><span>→</span></a>`)
+      .map(
+        (page) =>
+          `<a href="${storyUrl(page.slug)}">
+            <span>${displayTitle(page)}</span>
+            <span>→</span>
+          </a>`
+      )
       .join("");
   });
 
   document.querySelectorAll("[data-scroll]").forEach((button) => {
     button.addEventListener("click", () => {
-      const rail = button.closest(".chapter").querySelector(".card-rail");
-      rail.scrollBy({ left: button.dataset.scroll === "forward" ? 420 : -420, behavior: "smooth" });
+      const rail = button.closest(".chapter")?.querySelector(".card-rail");
+
+      if (!rail) return;
+
+      rail.scrollBy({
+        left: button.dataset.scroll === "forward" ? 420 : -420,
+        behavior: "smooth",
+      });
     });
   });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible"));
-  }, { threshold: 0.08 });
-  document.querySelectorAll(".reveal, .chapter-heading, .featured-story").forEach((item) => observer.observe(item));
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+
+    document
+      .querySelectorAll(".reveal, .chapter-heading, .featured-story")
+      .forEach((item) => observer.observe(item));
+  }
 }
 
 function setupMenu() {
   const button = document.querySelector(".menu-button");
+
   if (!button) return;
+
   button.addEventListener("click", () => {
     const open = button.getAttribute("aria-expanded") === "true";
+
     button.setAttribute("aria-expanded", String(!open));
-    document.getElementById("site-nav").classList.toggle("is-open", !open);
+
+    document
+      .getElementById("site-nav")
+      ?.classList.toggle("is-open", !open);
   });
 }
-const backToTopButton = document.querySelector(".back-to-top");
 
-if (backToTopButton) {
+/*
+ * Automatically add a Back to Top button to every page.
+ * If the page already has one (such as index.html), it reuses it.
+ */
+function setupBackToTop() {
+  let button = document.querySelector(".back-to-top");
+
+  if (!button) {
+    button = document.createElement("button");
+    button.className = "back-to-top";
+    button.type = "button";
+    button.setAttribute("aria-label", "Back to the top");
+    button.textContent = "↑";
+
+    document.body.appendChild(button);
+  }
+
   const updateBackToTopButton = () => {
-    backToTopButton.classList.toggle(
-      "is-visible",
-      window.scrollY > 500
-    );
+    button.classList.toggle("is-visible", window.scrollY > 500);
   };
 
   window.addEventListener("scroll", updateBackToTopButton, {
-    passive: true
+    passive: true,
   });
 
-  backToTopButton.addEventListener("click", () => {
+  button.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   });
 
   updateBackToTopButton();
 }
 
+/*
+ * Work out which story page is currently being displayed.
+ */
+function currentStory() {
+  const filename =
+    window.location.pathname.split("/").pop() || "index.html";
+
+  return state.pages.find((page) => page.file === filename);
+}
+
+/*
+ * Create Previous/Next navigation on story pages.
+ *
+ * Navigation remains within the same chapter:
+ *
+ * Bikes  -> previous/next bike
+ * Cars   -> previous/next car
+ * Work   -> previous/next job
+ * Travel -> previous/next travel story
+ *
+ * This means CGI doesn't suddenly lead into a Citroen C5,
+ * for example.
+ */
+function setupStoryNavigation() {
+  const article = document.querySelector(".story-content");
+
+  if (!article) return;
+
+  const current = currentStory();
+
+  if (!current) return;
+
+  const stories = ordered(current.category);
+  const index = stories.findIndex(
+    (page) => page.file === current.file
+  );
+
+  if (index === -1) return;
+
+  const previous = index > 0 ? stories[index - 1] : null;
+  const next =
+    index < stories.length - 1 ? stories[index + 1] : null;
+
+  /*
+   * Remove an old manually-created story-actions block if one
+   * already exists at the end of the article. This prevents
+   * duplicate navigation while converting older pages.
+   */
+  const existingActions = article.querySelector(":scope > .story-actions");
+
+  if (existingActions) {
+    existingActions.remove();
+  }
+
+  const navigation = document.createElement("nav");
+  navigation.className = "story-navigation";
+  navigation.setAttribute("aria-label", "Story navigation");
+
+  const previousHolder = document.createElement("div");
+  previousHolder.className = "story-navigation-previous";
+
+  const nextHolder = document.createElement("div");
+  nextHolder.className = "story-navigation-next";
+
+  if (previous) {
+    const previousLink = document.createElement("a");
+
+    previousLink.className = "story-nav-button story-nav-previous";
+    previousLink.href = previous.file;
+    previousLink.innerHTML = `
+      <span class="story-nav-direction">← Previous</span>
+      <strong>${displayTitle(previous)}</strong>
+    `;
+
+    previousHolder.appendChild(previousLink);
+  }
+
+  if (next) {
+    const nextLink = document.createElement("a");
+
+    nextLink.className = "story-nav-button story-nav-next";
+    nextLink.href = next.file;
+    nextLink.innerHTML = `
+      <span class="story-nav-direction">Next →</span>
+      <strong>${displayTitle(next)}</strong>
+    `;
+
+    nextHolder.appendChild(nextLink);
+  }
+
+  navigation.appendChild(previousHolder);
+  navigation.appendChild(nextHolder);
+
+  article.appendChild(navigation);
+}
+
 setupMenu();
 renderHome();
+setupBackToTop();
+setupStoryNavigation();
