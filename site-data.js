@@ -174,7 +174,7 @@ window.SITE_PAGES = [
     "title": "Strada",
     "category": "cars",
     "excerpt": "Fiat Strada 65cl My first car. I bought this off my parents, a bargain, about £400. In my mind this had the sportiest engine you could ever imagine, tyres so wide it was difficult to fit on a normal road, 145/65/15's I think, and a top speed of 90mph. I think I got it up to 85mph once, but it was a struggle. It was a great little car though, and I loved it.",
-    "image": "media/2024/04/strada.jpg"
+    "image": "media/2026/10/silver-strada.png"
   },
   {
     "slug": "capri-2",
