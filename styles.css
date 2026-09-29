@@ -714,12 +714,14 @@ story-actions {
 
 .story-float-right {
   float: right;
-  margin: 0.35rem 0 1.25rem 1.75rem;
+  margin: 0.35rem 0 1.25rem 0rem;
+  padding-right: 1.5rem;
 }
 
 .story-float-left {
   float: left;
-  margin: 0.35rem 1.75rem 1.25rem 0;
+  margin: 0.35rem 0rem 1.25rem 0;
+  padding-right: 1.5rem;
 }
 
 .story-image-centre {
@@ -758,5 +760,11 @@ story-actions {
     float: none;
     width: min(100%, 420px);
     margin: 1.5rem auto;
+    padding: 0;
   }
+}
+.story-float-left img,
+.story-float-right img,
+.story-image-centre img {
+  cursor: zoom-in;
 }
