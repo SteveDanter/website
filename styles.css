@@ -768,3 +768,46 @@ story-actions {
 .story-image-centre img {
   cursor: zoom-in;
 }
+/* Alternating article photographs: reuse the existing float and phone rules. */
+.story-content { display: flow-root; }
+.story-content .story-navigation,
+.story-content > .story-actions { clear: both; }
+.story-content > figure:not(.story-float-left):not(.story-float-right),
+.story-content > .content-grid:not(.story-photo-flow) { clear: both; }
+.story-content .story-photo-flow { display: contents; }
+.story-content figure.story-float-left,
+.story-content figure.story-float-right {
+  width: min(38%, 300px);
+  margin: .35rem 0 1.25rem;
+  padding: 0;
+  display: block;
+  min-height: 0;
+  aspect-ratio: auto;
+  overflow: visible;
+  background: transparent;
+  clear: both;
+}
+.story-content figure.story-float-left { padding-right: 1.5rem; }
+.story-content figure.story-float-right { padding-left: 1.5rem; }
+.story-content figure.story-float-left img,
+.story-content figure.story-float-right img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  object-fit: contain;
+}
+.story-content figure.story-float-left::before,
+.story-content figure.story-float-right::before { display: none; }
+.story-content figure.story-float-left > figure,
+.story-content figure.story-float-right > figure { margin: 0; }
+@media (max-width: 700px) {
+  .story-content figure.story-float-left,
+  .story-content figure.story-float-right {
+    float: none;
+    width: min(100%, 420px);
+    margin: 1.5rem auto;
+    padding: 0;
+  }
+}
