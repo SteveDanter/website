@@ -323,3 +323,100 @@ setupMenu();
 renderHome();
 setupBackToTop();
 setupStoryNavigation();
+/* Photo viewer for in-article photographs and galleries. */
+function setupPhotoViewer() {
+  const dialog = document.createElement('dialog');
+  dialog.className = 'site-photo-viewer';
+  dialog.setAttribute('aria-label', 'Full-size photograph');
+  dialog.innerHTML = `
+    <div class="site-photo-toolbar">
+      <button type="button" class="site-photo-back">← Back to the page</button>
+    </div>
+    <div class="site-photo-stage"><img alt=""></div>
+    <p class="site-photo-caption"></p>`;
+  document.body.appendChild(dialog);
+  const back = dialog.querySelector('.site-photo-back');
+  const photo = dialog.querySelector('img');
+  const caption = dialog.querySelector('.site-photo-caption');
+  let origin;
+  let scrollPosition = 0;
+  let previousOverflow = '';
+
+  function imageLink(link) {
+    if (!link) return false;
+    try {
+      return /\.(?:avif|gif|jpe?g|png|svg|webp|bmp)$/i.test(new URL(link.href).pathname);
+    } catch { return false; }
+  }
+
+  function preparePhotos() {
+    document.querySelectorAll('article.story-content img').forEach(img => {
+      if (!img.getAttribute('src') || img.closest('[data-no-photo-viewer], .story-hero, .story-hero-image, .hero, .hero-gallery, .story-cover, .archive-card, .archive-intro, .slideshow, .carousel')) return;
+      const destination = img.closest('a');
+      if (destination && !imageLink(destination)) return;
+      img.classList.add('site-photo-trigger');
+      const link = img.closest('a');
+      if (imageLink(link)) {
+        link.setAttribute('aria-haspopup', 'dialog');
+      } else {
+        img.tabIndex = 0;
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-haspopup', 'dialog');
+        img.setAttribute('aria-label', img.alt ? `Enlarge photo: ${img.alt}` : 'Enlarge photograph');
+      }
+    });
+  }
+
+  function openPhoto(img) {
+    origin = img.hasAttribute('tabindex') ? img : img.closest('a') || img;
+    scrollPosition = window.scrollY;
+    previousOverflow = document.documentElement.style.overflow;
+    const link = img.closest('a');
+    photo.src = imageLink(link) ? link.href : img.currentSrc || img.src;
+    photo.alt = img.alt;
+    const text = img.closest('figure')?.querySelector('figcaption')?.textContent.trim() || img.alt;
+    caption.textContent = text;
+    caption.hidden = !text;
+    dialog.showModal();
+    document.documentElement.style.overflow = 'hidden';
+    back.focus({ preventScroll: true });
+  }
+
+  back.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('keydown', event => {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      back.focus();
+    }
+  });
+  dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    document.documentElement.style.overflow = previousOverflow;
+    photo.removeAttribute('src');
+    origin?.focus({ preventScroll: true });
+    window.scrollTo({ top: scrollPosition, behavior: 'instant' });
+  });
+
+  // Capture image clicks before older gallery handlers or image links open a tab.
+  document.addEventListener('click', event => {
+    const link = event.target.closest('main a');
+    const img = event.target.closest('main img.site-photo-trigger') ||
+      (imageLink(link) ? link.querySelector('img.site-photo-trigger') : null);
+    if (!img || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    openPhoto(img);
+  }, true);
+  document.addEventListener('keydown', event => {
+    if (event.target.matches('main img.site-photo-trigger') && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openPhoto(event.target);
+    }
+  }, true);
+  preparePhotos();
+}
+
+setupPhotoViewer();
