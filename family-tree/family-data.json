@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-05T13:28:08.054Z",
+  "generated": "2026-10-05T17:34:56.464Z",
   "primarySource": "Stephen Danter Family Tree (1).ged",
   "sources": [
     {
@@ -121,7 +121,7 @@
       ],
       "source": "Stephen Danter Family Tree (1).ged",
       "parents": [
-        "@I_1625549800@",
+        "legacy:Danter1 2020.ged:@P11@",
         "@I_1625549801@"
       ],
       "partners": [
@@ -2176,7 +2176,9 @@
       "id": "@I_1625549879@",
       "name": "Paula Monaghan",
       "sex": "F",
-      "birth": {},
+      "birth": {
+        "place": "Bridgend"
+      },
       "death": {},
       "famc": [
         "@F69@"
@@ -2190,9 +2192,12 @@
         "@I_1625549878@"
       ],
       "partners": [
-        "@I_1625549883@"
+        "@I_1625549883@",
+        "legacy:Danter1 2020.ged:@P158@"
       ],
-      "children": [],
+      "children": [
+        "legacy:Danter1 2020.ged:@P157@"
+      ],
       "living": true
     },
     {
@@ -2200,8 +2205,14 @@
       "id": "@I_1625549878@",
       "name": "Kay Bradley",
       "sex": "F",
-      "birth": {},
-      "death": {},
+      "birth": {
+        "place": "Bridgend",
+        "date": "1946"
+      },
+      "death": {
+        "date": "1996",
+        "place": "Bridgend"
+      },
       "famc": [
         "@F80@"
       ],
@@ -2211,7 +2222,7 @@
       ],
       "source": "Stephen Danter Family Tree (1).ged",
       "parents": [
-        "@I_1625549800@",
+        "legacy:Danter1 2020.ged:@P11@",
         "@I_1625549801@"
       ],
       "partners": [
@@ -2223,7 +2234,7 @@
         "@I_1625549877@",
         "@I_1625549879@"
       ],
-      "living": true
+      "living": false
     },
     {
       "type": "person",
@@ -4024,37 +4035,13 @@
         "@I112550735530@"
       ],
       "partners": [
-        "@I_1625549800@"
+        "legacy:Danter1 2020.ged:@P11@"
       ],
       "children": [
         "@I_1625549958@",
         "@I_1625549878@"
       ],
       "living": false
-    },
-    {
-      "type": "person",
-      "id": "@I_1625549800@",
-      "name": "Thomas Bradley",
-      "sex": "M",
-      "birth": {
-        "place": "Bridgend"
-      },
-      "death": {},
-      "famc": [],
-      "fams": [
-        "@F80@"
-      ],
-      "source": "Stephen Danter Family Tree (1).ged",
-      "parents": [],
-      "partners": [
-        "@I_1625549801@"
-      ],
-      "children": [
-        "@I_1625549958@",
-        "@I_1625549878@"
-      ],
-      "living": true
     },
     {
       "type": "person",
@@ -9345,8 +9332,8 @@
       "name": "Reginald Thomas Bradley",
       "sex": "M",
       "birth": {
-        "date": "1923",
-        "place": "Bridgend"
+        "place": "Bridgend",
+        "date": "1923"
       },
       "death": {
         "date": "01 Feb 2020",
@@ -9354,7 +9341,8 @@
       },
       "famc": [],
       "fams": [
-        "@F47@"
+        "@F47@",
+        "@F80@"
       ],
       "source": "Danter1 2020.ged",
       "parents": [],
@@ -9366,7 +9354,41 @@
         "@I_1625549878@"
       ],
       "legacy": true,
-      "living": false
+      "living": false,
+      "nickname": "Tom",
+      "alternateNames": [
+        "Thomas Bradley"
+      ],
+      "mergeHistory": [
+        {
+          "date": "2026-10-05T17:23:37.253Z",
+          "reason": "Confirmed by Stephen Danter: Thomas Bradley and Reginald Thomas Bradley are his maternal grandfather, known as Tom.",
+          "previousRecord": {
+            "type": "person",
+            "id": "@I_1625549800@",
+            "name": "Thomas Bradley",
+            "sex": "M",
+            "birth": {
+              "place": "Bridgend"
+            },
+            "death": {},
+            "famc": [],
+            "fams": [
+              "@F80@"
+            ],
+            "source": "Stephen Danter Family Tree (1).ged",
+            "parents": [],
+            "partners": [
+              "@I_1625549801@"
+            ],
+            "children": [
+              "@I_1625549958@",
+              "@I_1625549878@"
+            ],
+            "living": true
+          }
+        }
+      ]
     },
     {
       "type": "person",
