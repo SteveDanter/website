@@ -178,7 +178,7 @@
     $('save-files').disabled = true;
     $('editor').inert = true;
     try {
-      if (!folder) folder = await window.showDirectoryPicker({ mode: 'readwrite', id: 'danter-family-tree' });
+      if (!folder) folder = await window.showDirectoryPicker({ mode: 'readwrite', id: 'danter-family-tree-save-v2' });
       const file = await folder.getFileHandle('family-tree.html');
       const current = await (await file.getFile()).text();
       const parsed = new DOMParser().parseFromString(current, 'text/html').getElementById('family-tree-data');
