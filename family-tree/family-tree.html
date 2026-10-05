@@ -119,6 +119,16 @@ Error generating stack: `+e.message+`
   border-radius: 12px; box-shadow: 0 6px 28px #25372e33; font: 14px Arial, sans-serif;
 }
 .tree-controls[hidden] { display: none; }
+.tree-controls { z-index: 60; width: min(780px, calc(100vw - 24px)); }
+body.tree-expanded { overflow: hidden; }
+body.tree-expanded .branch {
+  position: fixed; inset: 0; z-index: 50; background: var(--paper);
+  display: flex; flex-direction: column; padding: 16px; margin: 0;
+}
+body.tree-expanded .branch-intro { flex: 0 0 auto; margin: 0 0 12px; }
+body.tree-expanded .branch > ul { flex: 1 1 auto; min-height: 0; }
+@media (width <= 480px) { body.tree-expanded .branch > ul { padding-bottom: 150px; } }
+
 .tree-controls button {
   cursor: pointer; border: 1px solid var(--line); border-radius: 6px;
   background: var(--paper); min-width: 38px; min-height: 38px; padding: 6px 10px;
@@ -143,7 +153,7 @@ Error generating stack: `+e.message+`
   toolbar.hidden = true;
   toolbar.setAttribute('role', 'region');
   toolbar.setAttribute('aria-label', 'Family tree navigation');
-  toolbar.innerHTML = '<div class="tree-pan"><button type="button" data-pan="-1" aria-label="Scroll tree left">←</button><input type="range" min="0" max="1000" value="0" aria-label="Horizontal tree position"><button type="button" data-pan="1" aria-label="Scroll tree right">→</button></div><button type="button" data-zoom="-1" aria-label="Zoom out">−</button><output aria-label="Tree zoom">100%</output><button type="button" data-zoom="1" aria-label="Zoom in">+</button><button type="button" data-reset aria-label="Reset tree zoom">Reset</button>';
+  toolbar.innerHTML = '<div class="tree-pan"><button type="button" data-pan="-1" aria-label="Scroll tree left">←</button><input type="range" min="0" max="1000" value="0" aria-label="Horizontal tree position"><button type="button" data-pan="1" aria-label="Scroll tree right">→</button></div><button type="button" data-zoom="-1" aria-label="Zoom out">−</button><output aria-label="Tree zoom">100%</output><button type="button" data-zoom="1" aria-label="Zoom in">+</button><button type="button" data-reset aria-label="Reset tree zoom">Reset</button><button type="button" data-fullpage aria-pressed="false">Full page</button>';
   document.body.append(toolbar);
   const slider = toolbar.querySelector('input');
   const output = toolbar.querySelector('output');
@@ -152,6 +162,28 @@ Error generating stack: `+e.message+`
   let viewport = null;
   let zoom = 1;
   let frame = 0;
+  let expanded = false;
+  let normalScrollTop = 0;
+  let normalPageTop = 0;
+  const fullpage = toolbar.querySelector('[data-fullpage]');
+  function setExpanded(value) {
+    if (value && !viewport) return;
+    if (value === expanded) return;
+    if (value) { normalScrollTop = viewport.scrollTop; normalPageTop = window.scrollY; }
+    expanded = value;
+    document.body.classList.toggle('tree-expanded', expanded);
+    fullpage.textContent = expanded ? 'Return to normal' : 'Full page';
+    fullpage.setAttribute('aria-pressed', String(expanded));
+    if (!expanded && viewport) {
+      viewport.scrollTop = normalScrollTop;
+      window.scrollTo({ top: normalPageTop, behavior: 'instant' });
+    }
+    fullpage.focus({ preventScroll: true });
+    schedule();
+  }
+  window.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && expanded) { event.preventDefault(); setExpanded(false); }
+  });
   const schedule = () => { if (!frame) frame = requestAnimationFrame(() => { frame = 0; update(); }); };
   const observer = new ResizeObserver(schedule);
   function update() {
@@ -161,11 +193,11 @@ Error generating stack: `+e.message+`
       viewport = next;
       if (viewport) { viewport.addEventListener('scroll', schedule, { passive: true }); observer.observe(viewport); }
     }
-    if (!viewport) { toolbar.hidden = true; return; }
+    if (!viewport) { if (expanded) setExpanded(false); toolbar.hidden = true; return; }
     const tree = viewport.firstElementChild;
     if (tree) tree.style.zoom = String(zoom);
     const rect = viewport.getBoundingClientRect();
-    toolbar.hidden = rect.top >= innerHeight - 30 || rect.bottom <= 0;
+    toolbar.hidden = !expanded && (rect.top >= innerHeight - 30 || rect.bottom <= 0);
     const max = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
     slider.disabled = max <= 1;
     slider.value = max ? String(Math.round(viewport.scrollLeft / max * 1000)) : '0';
@@ -182,13 +214,15 @@ Error generating stack: `+e.message+`
   function setZoom(value) {
     if (!viewport) return;
     const old = zoom;
+    const verticalCentre = viewport.scrollTop + viewport.clientHeight / 2;
     const centre = viewport.scrollLeft + viewport.clientWidth / 2;
     const rect = viewport.getBoundingClientRect();
     const anchor = Math.max(0, Math.min(innerHeight / 2 - rect.top, rect.height));
     zoom = Math.max(.4, Math.min(1.6, Math.round(value * 10) / 10));
     viewport.firstElementChild.style.zoom = String(zoom);
     viewport.scrollLeft = centre * zoom / old - viewport.clientWidth / 2;
-    window.scrollBy({ top: anchor * (zoom / old - 1), behavior: 'instant' });
+    if (expanded) viewport.scrollTop = verticalCentre * zoom / old - viewport.clientHeight / 2;
+    else window.scrollBy({ top: anchor * (zoom / old - 1), behavior: 'instant' });
     update();
   }
   toolbar.addEventListener('click', event => {
@@ -197,6 +231,7 @@ Error generating stack: `+e.message+`
     if (button.dataset.pan) viewport.scrollBy({ left: Number(button.dataset.pan) * viewport.clientWidth * .7, behavior: 'smooth' });
     if (button.dataset.zoom) setZoom(zoom + Number(button.dataset.zoom) * .1);
     if (button.hasAttribute('data-reset')) setZoom(1);
+    if (button.hasAttribute('data-fullpage')) setExpanded(!expanded);
   });
   new MutationObserver(schedule).observe(document.getElementById('root'), { childList: true, subtree: true });
   window.addEventListener('scroll', schedule, { passive: true });
