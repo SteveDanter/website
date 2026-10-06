@@ -846,3 +846,16 @@ main img.site-photo-trigger:focus-visible { outline: 3px solid var(--orange, #e7
 .site-photo-viewer .site-photo-stage img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; }
 .site-photo-caption { flex: 0 0 auto; max-height: 20vh; overflow: auto; margin: 0; text-align: center; font: 1rem/1.4 Arial, sans-serif; }
 @media (max-width: 700px) { .site-photo-viewer { padding: .75rem; gap: .75rem; } }
+.chapter-number {
+  display: none;
+}
+.hero-photo figcaption > span {
+  display: none;
+}
+.card-meta > span:first-child {
+  display: none;
+}
+
+.card-meta {
+  justify-content: flex-end;
+}
