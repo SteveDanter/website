@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-05T17:34:56.464Z",
+  "generated": "2026-10-07T11:58:48.244Z",
   "primarySource": "Stephen Danter Family Tree (1).ged",
   "sources": [
     {
@@ -2082,27 +2082,6 @@
     },
     {
       "type": "person",
-      "id": "@I_1625549883@",
-      "name": "Simon Morrison",
-      "sex": "M",
-      "birth": {
-        "place": "Scotland"
-      },
-      "death": {},
-      "famc": [],
-      "fams": [
-        "@F67@"
-      ],
-      "source": "Stephen Danter Family Tree (1).ged",
-      "parents": [],
-      "partners": [
-        "@I_1625549879@"
-      ],
-      "children": [],
-      "living": true
-    },
-    {
-      "type": "person",
       "id": "@I_1625549882@",
       "name": "Peter Monaghan",
       "sex": "M",
@@ -2192,7 +2171,7 @@
         "@I_1625549878@"
       ],
       "partners": [
-        "@I_1625549883@",
+        "legacy:Danter1 2020.ged:@P155@",
         "legacy:Danter1 2020.ged:@P158@"
       ],
       "children": [
@@ -2271,9 +2250,13 @@
       "name": "Barrie Ian McKay",
       "sex": "M",
       "birth": {
-        "place": "Borowash, Derby"
+        "place": "Borowash, Derby",
+        "date": "1st May 1939"
       },
-      "death": {},
+      "death": {
+        "date": "16th March 2025",
+        "place": "Cardiff"
+      },
       "famc": [
         "@F60@"
       ],
@@ -2293,7 +2276,7 @@
         "@I_1625549873@",
         "@I_1625549960@"
       ],
-      "living": true
+      "living": false
     },
     {
       "type": "person",
@@ -2356,11 +2339,11 @@
       "sex": "F",
       "birth": {
         "place": "Wessberg, Germany",
-        "date": ""
+        "date": "12th September 1965"
       },
       "death": {
-        "date": "",
-        "place": ""
+        "date": "21st February 2025",
+        "place": "Cardff"
       },
       "famc": [
         "@F64@"
@@ -2374,7 +2357,8 @@
         "@I_1625549875@"
       ],
       "partners": [
-        "@I_1625549834@"
+        "@I_1625549834@",
+        "local:07a7e050-d392-48d4-9f1c-a3dc2bfee6d5"
       ],
       "children": [],
       "living": false
@@ -9421,7 +9405,8 @@
       "death": {},
       "famc": [],
       "fams": [
-        "@F22@"
+        "@F22@",
+        "@F67@"
       ],
       "source": "Danter1 2020.ged",
       "parents": [],
@@ -9430,7 +9415,37 @@
       ],
       "children": [],
       "legacy": true,
-      "living": true
+      "living": true,
+      "alternateNames": [
+        "Simon Morrison"
+      ],
+      "mergeHistory": [
+        {
+          "date": "2026-10-07T11:43:47.773Z",
+          "reason": "Confirmed by Stephen Danter: Simon Morrison and Simon P Morrison are the same person, the first husband of Paula Monaghan.",
+          "previousRecord": {
+            "type": "person",
+            "id": "@I_1625549883@",
+            "name": "Simon Morrison",
+            "sex": "M",
+            "birth": {
+              "place": "Scotland"
+            },
+            "death": {},
+            "famc": [],
+            "fams": [
+              "@F67@"
+            ],
+            "source": "Stephen Danter Family Tree (1).ged",
+            "parents": [],
+            "partners": [
+              "@I_1625549879@"
+            ],
+            "children": [],
+            "living": true
+          }
+        }
+      ]
     },
     {
       "type": "person",
@@ -9479,10 +9494,10 @@
     {
       "type": "person",
       "id": "local:bdf814bc-1277-429d-8771-2d0349d4117a",
-      "name": "Maisie",
+      "name": "Maisie Buck",
       "sex": "F",
       "birth": {
-        "place": ""
+        "place": "England"
       },
       "death": {},
       "parents": [
@@ -9499,7 +9514,7 @@
     {
       "type": "person",
       "id": "local:358de27a-1b0b-4762-a98c-d2afed18e225",
-      "name": "Simon",
+      "name": "Simon Buck",
       "sex": "M",
       "birth": {
         "place": "England"
@@ -9591,6 +9606,25 @@
         "@I_1625549799@"
       ],
       "partners": [],
+      "children": [],
+      "famc": [],
+      "fams": [],
+      "source": "Local family updates",
+      "living": true
+    },
+    {
+      "type": "person",
+      "id": "local:07a7e050-d392-48d4-9f1c-a3dc2bfee6d5",
+      "name": "Colin E Knight",
+      "sex": "M",
+      "birth": {
+        "place": "London"
+      },
+      "death": {},
+      "parents": [],
+      "partners": [
+        "@I_1625549873@"
+      ],
       "children": [],
       "famc": [],
       "fams": [],
