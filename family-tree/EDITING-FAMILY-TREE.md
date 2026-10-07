@@ -25,3 +25,8 @@ Include `edit-tree.html`, `edit-tree.js`, `family-tree.html`, `family-data.json`
 The editor works on your local computer. It is not a login system or an online editing service. The public website continues to show the saved tree. Dates of birth and death details for living people are omitted from saved records, matching the existing public tree.
 
 This editor maintains the website's records directly. It does not update the original GEDCOM files or the separate FamilyTree source project. Rebuilding this website from those original GEDCOM exports would replace local additions, so retain a copy of your saved website files before doing that.
+
+## Maintaining the website
+
+The current master records are in family-data.json in this folder. The maintainable templates, styles, editor code and build tool are in ../../Build-FamilyTree-Files/maintained-tree. Save all editor changes first, then double-click Build website.cmd there when changing the page design or code. Reopen the editor after building. The new build preserves the saved records and does not import GEDCOM. The older project build commands still import GEDCOM and should not be used to replace this edited tree.
+
