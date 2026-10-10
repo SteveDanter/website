@@ -74,7 +74,7 @@ const preferredOrder = {
 
   travel: [
     "campsites"
-    "the-journey-there",
+    "photo's-from-france",
     "france-2023",
     "france-june-2026",
     "france-sept-2026",
