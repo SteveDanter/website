@@ -88,14 +88,7 @@ window.SITE_PAGES = [
     "excerpt": "Me, Me, Me… And so, with this website, I welcome you to a little insight to my world… of course this is where I should begin. At the beginning of my time… OK, just, picture it – it was the summer of '65, the sun must have been shining, the birds must have been singing, and I was born in Maesteg General Hospital, on 21st July 1965. I was a healthy baby, and I was a happy baby, and I was a happy child, and I was a happy teenager, and I was a happy adult…",
     "image": "media/2025/02/llangeinormast.png"
   },
-  {
-    "slug": "campsites",
-    "file": "campsites.html",
-    "title": "Campsites",
-    "category": "travel",
-    "excerpt": "Camping… These days I almost always go to the west coast of France. When people ask which part I go to I always describe it as “about half way down, on the left coast by Bordeaux”",
-    "image": "media/2024/04/lesmathes.png"
-  },
+ 
   {
     "slug": "nissan-300zx",
     "file": "nissan-300zx.html",
@@ -247,6 +240,15 @@ window.SITE_PAGES = [
     "category": "bikes",
     "excerpt": "Suzuki TS100 My first bike! On 15th September 1981 aged 16 years and almost 2 months I joined the Army as an apprentice electrician based in Chepstow. I was there for 2 and a half years, and during that time I was allowed to have a bike, and so I bought this one",
     "image": "media/2024/03/ts100.png"
+  },
+
+   {
+    "slug": "campsites",
+    "file": "campsites.html",
+    "title": "Campsites",
+    "category": "travel",
+    "excerpt": "Camping… These days I almost always go to the west coast of France. When people ask which part I go to I always describe it as “about half way down, on the left coast by Bordeaux”",
+    "image": "media/2024/04/lesmathes.png"
   },
   {
     "slug": "france-2023",
