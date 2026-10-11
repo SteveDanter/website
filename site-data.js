@@ -120,9 +120,9 @@ window.SITE_PAGES = [
     "image": "media/2024/04/pxl_20231005_130503953.jpg"
   },
   {
-    "slug": "on-foot-and-peddle-power",
+    "slug": "on-foot-and-pedal-power",
     "file": "on-foot-and-pedal-power.html",
-    "title": "On foot and peddle power",
+    "title": "On foot and pedal power",
     "category": "life",
     "excerpt": "The Early Years – Birth to Bike  Turns out the forecast for the day I was born was probably something like “rather unsettled, with showers or thunderstorms in places, not especially warm",
     "image": "media/2024/09/youngsteve.png"
