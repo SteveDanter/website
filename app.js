@@ -33,7 +33,7 @@ function displayTitle(page) {
  */
 const preferredOrder = {
   life: [
-    "on-foot-and-peddle-power",
+    "on-foot-and-pedal-power",
     "my-bikes-and-cars"
   ],
 
