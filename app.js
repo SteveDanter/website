@@ -77,7 +77,7 @@ const preferredOrder = {
     "photos-from-france",
     "france-2023",
     "france-june-2026",
-    "france-sept-2026",
+    "france-sept-2026"
   ],
 };
 
