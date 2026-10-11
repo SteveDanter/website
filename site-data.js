@@ -272,7 +272,7 @@ window.SITE_PAGES = [
     "image": "media/2026/09/bisca-sign.jpg"
   },
   {
-    "slug": "photo's-from-france",
+    "slug": "photos-from-france",
     "file": "french-camping.html",
     "title": "Photo's of France",
     "category": "travel",
