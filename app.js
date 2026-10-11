@@ -33,7 +33,7 @@ function displayTitle(page) {
  */
 const preferredOrder = {
   life: [
-    "on-foot-and-pedal-power",
+    "on-foot-and-peddle-power",
     "my-bikes-and-cars"
   ],
 
@@ -73,7 +73,7 @@ const preferredOrder = {
   ],
 
   travel: [
-    "campsites"
+    "campsites",
     "photos-from-france",
     "france-2023",
     "france-june-2026",
