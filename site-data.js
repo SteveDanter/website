@@ -14,8 +14,7 @@ window.SITE_PAGES = [
     "category": "archive",
     "excerpt": "Some photos from my time in Northern Ireland",
     "image": "media/2024/12/image_editor_output_image-310901311-17333195995725999791230895811711.jpg"
-  },
-  
+  },  
   {
     "slug": "new-bike",
     "file": "new-bike.html",
@@ -87,8 +86,7 @@ window.SITE_PAGES = [
     "category": "life",
     "excerpt": "Me, Me, Me… And so, with this website, I welcome you to a little insight to my world… of course this is where I should begin. At the beginning of my time… OK, just, picture it – it was the summer of '65, the sun must have been shining, the birds must have been singing, and I was born in Maesteg General Hospital, on 21st July 1965. I was a healthy baby, and I was a happy baby, and I was a happy child, and I was a happy teenager, and I was a happy adult…",
     "image": "media/2025/02/llangeinormast.png"
-  },
- 
+  }, 
   {
     "slug": "nissan-300zx",
     "file": "nissan-300zx.html",
@@ -241,8 +239,7 @@ window.SITE_PAGES = [
     "excerpt": "Suzuki TS100 My first bike! On 15th September 1981 aged 16 years and almost 2 months I joined the Army as an apprentice electrician based in Chepstow. I was there for 2 and a half years, and during that time I was allowed to have a bike, and so I bought this one",
     "image": "media/2024/03/ts100.png"
   },
-
-   {
+  {
     "slug": "campsites",
     "file": "campsites.html",
     "title": "Campsites",
@@ -265,8 +262,7 @@ window.SITE_PAGES = [
     "category": "travel",
     "excerpt": "Two weeks, two locations. The first week at my favourite site, La Pinede and then a further week at a new,to me, site in the Loire Valley.",
     "image": "media/2026/06/RiverScene1.jpg"
-  },
-    
+  },    
   {
     "slug": "france-sept-2026",
     "file": "france-sept-2026.html",
