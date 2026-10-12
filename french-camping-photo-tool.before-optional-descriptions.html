@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>French camping photo tool</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#21352e;background:#f5f3ec}*{box-sizing:border-box}body{margin:0}main{max-width:920px;margin:auto;padding:32px 20px 72px}h1{font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.04em;margin:0 0 8px}p{line-height:1.5}header p{color:#53645a;margin:0 0 30px}.panel{background:white;border:1px solid #d9ded5;border-radius:18px;padding:24px;margin:18px 0;box-shadow:0 8px 24px #183b2310}h2{font-size:1.2rem;margin:0 0 14px}.step{display:inline-grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#dce9dc;margin-right:8px}button,.button{border:0;border-radius:10px;background:#276b4c;color:white;padding:12px 18px;font:inherit;font-weight:650;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}button.secondary{background:#e8eee8;color:#214e36}button:hover:not(:disabled){filter:brightness(.93)}#drop{border:2px dashed #8aa994;border-radius:14px;padding:36px;text-align:center;background:#f9fcf8;cursor:pointer}#drop.over{background:#e9f5e9;border-color:#276b4c}#drop strong{display:block;font-size:1.15rem}#drop small{display:block;margin-top:7px;color:#5e6d63}.photos{display:grid;gap:14px;margin-top:18px}.photo{display:grid;grid-template-columns:120px 1fr auto;gap:15px;align-items:start;padding:12px;border:1px solid #e1e7df;border-radius:12px}.photo img{width:120px;height:100px;object-fit:cover;border-radius:8px}.photo label{display:block;font-size:.9rem;font-weight:650;margin:2px 0 5px}.photo input{width:100%;border:1px solid #bdcbbf;border-radius:8px;padding:9px;font:inherit}.photo .name{font-size:.8rem;color:#657369;overflow-wrap:anywhere;margin:0 0 8px}.photo button{padding:8px 10px}.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}#status{padding:12px 14px;border-radius:10px;background:#e8eee8;white-space:pre-wrap}#status.error{background:#fce9e6;color:#8a3024}#status.success{background:#e3f3e7;color:#205b35}#folderName{font-weight:650}.hint{color:#58695e;font-size:.92rem;margin:12px 0 0}input[type=file]{display:none}@media(max-width:600px){.photo{grid-template-columns:80px 1fr}.photo img{width:80px;height:80px}.photo button{grid-column:2;justify-self:start}}
+  </style>
+</head>
+<body>
+<main>
+  <header><h1>Add camping photos</h1><p>Drop in photos, add captions, and save them into your website.</p></header>
+  <section class="panel"><h2><span class="step">1</span>Choose your website folder</h2><div class="row"><button id="chooseFolder">Choose folder</button><span id="folderName">No folder selected</span></div><p class="hint">Choose <b>C:\Website\steve-life-site\webpages</b>, the folder containing <b>french-camping.html</b> and <b>media</b>. The tool changes files only when you click Save.</p></section>
+  <section class="panel"><h2><span class="step">2</span>Add photos</h2><div id="drop" role="button" tabindex="0" aria-label="Drop photos here or choose files"><strong>Drop photos here</strong><small>or click to choose JPEG, PNG, or WebP images</small></div><input id="files" type="file" accept="image/jpeg,image/png,image/webp" multiple><div id="photos" class="photos"></div></section>
+  <section class="panel"><h2><span class="step">3</span>Save to the page</h2><p class="hint">Images are resized to a maximum of 2000 pixels and saved as JPEG using their original names. If a name already exists, a number is added. A backup of the page is made first.</p><div class="row" style="margin-top:18px"><button id="save" disabled>Save photos and update page</button><button id="clear" class="secondary" disabled>Clear list</button></div><p id="status" role="status">Choose your website folder and add photos to begin.</p></section>
+</main>
+<script>
+(() => {
+  let folder = null;
+  const photos = [];
+  const $ = id => document.getElementById(id);
+  const status = (message, kind = '') => { $('status').textContent = message; $('status').className = kind; };
+  const ready = () => { $('save').disabled = !folder || !photos.length; $('clear').disabled = !photos.length; };
+  const escapeHtml = value => value.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const slug = value => value.normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,45) || 'photo';
+  function render() {
+    $('photos').replaceChildren();
+    photos.forEach((item, index) => {
+      const card = document.createElement('div'); card.className = 'photo';
+      const img = document.createElement('img'); img.src = item.url; img.alt = '';
+      const fields = document.createElement('div');
+      const name = document.createElement('p'); name.className = 'name'; name.textContent = item.file.name;
+      const label = document.createElement('label'); label.textContent = 'Photo description'; label.htmlFor = 'caption-' + index;
+      const input = document.createElement('input'); input.id = label.htmlFor; input.value = item.caption; input.placeholder = 'What does this photo show?';
+      input.addEventListener('input', () => item.caption = input.value);
+      fields.append(name,label,input);
+      const remove = document.createElement('button'); remove.className = 'secondary'; remove.textContent = 'Remove'; remove.setAttribute('aria-label','Remove '+item.file.name);
+      remove.addEventListener('click', () => { URL.revokeObjectURL(item.url); photos.splice(index,1); render(); });
+      card.append(img,fields,remove); $('photos').append(card);
+    });
+    ready();
+  }
+  async function addFiles(files) {
+    let rejected = 0;
+    for (const file of files) {
+      if (!['image/jpeg','image/png','image/webp'].includes(file.type)) { rejected++; continue; }
+      photos.push({file,caption:'',url:URL.createObjectURL(file)});
+    }
+    render();
+    status(rejected ? `${rejected} unsupported file(s) skipped. JPEG, PNG and WebP work here.` : `${photos.length} photo(s) ready. Add a short description for each.`, rejected ? 'error' : '');
+  }
+  $('chooseFolder').addEventListener('click', async () => {
+    try {
+      if (!window.showDirectoryPicker) throw new Error('Open this tool in a recent version of Chrome or Edge.');
+      const candidate = await window.showDirectoryPicker({mode:'readwrite'});
+      await candidate.getFileHandle('french-camping.html');
+      folder = candidate; $('folderName').textContent = candidate.name; ready();
+      status('Website folder selected. Add your photos.');
+    } catch (error) { if(error.name !== 'AbortError') status(error.message || String(error),'error'); }
+  });
+  $('drop').addEventListener('click', () => $('files').click());
+  $('drop').addEventListener('keydown', event => { if(event.key==='Enter' || event.key===' '){event.preventDefault();$('files').click();} });
+  $('files').addEventListener('change', event => { addFiles(event.target.files); event.target.value=''; });
+  $('drop').addEventListener('dragover', event => { event.preventDefault(); $('drop').classList.add('over'); });
+  $('drop').addEventListener('dragleave', () => $('drop').classList.remove('over'));
+  $('drop').addEventListener('drop', event => { event.preventDefault(); $('drop').classList.remove('over'); addFiles(event.dataTransfer.files); });
+  $('clear').addEventListener('click', () => { photos.forEach(item => URL.revokeObjectURL(item.url)); photos.length=0; render(); status('Photo list cleared.'); });
+  async function resize(file) {
+    const bitmap = await createImageBitmap(file, {imageOrientation:'from-image'});
+    const scale = Math.min(1,2000/Math.max(bitmap.width,bitmap.height));
+    const canvas = document.createElement('canvas'); canvas.width=Math.round(bitmap.width*scale); canvas.height=Math.round(bitmap.height*scale);
+    const context=canvas.getContext('2d'); context.fillStyle='#fff'; context.fillRect(0,0,canvas.width,canvas.height);
+    context.drawImage(bitmap,0,0,canvas.width,canvas.height); bitmap.close();
+    const blob = await new Promise(resolve => canvas.toBlob(resolve,'image/jpeg',.88));
+    if(!blob) throw new Error('Could not convert '+file.name);
+    return blob;
+  }
+  async function write(handle, contents) { const stream=await handle.createWritable(); await stream.write(contents); await stream.close(); }
+  async function nameExists(directory, name) {
+    try { await directory.getFileHandle(name); return true; }
+    catch(error) { if(error.name==='NotFoundError') return false; throw error; }
+  }
+  $('save').addEventListener('click', async () => {
+    $('save').disabled=true;
+    try {
+      if (!folder || !photos.length) return;
+      status('Preparing photos…');
+      const pageHandle=await folder.getFileHandle('french-camping.html');
+      const page=await (await pageHandle.getFile()).text();
+      const articleClose=page.lastIndexOf('</article>');
+      const galleryOpen=page.indexOf('<div class="photo-gallery">');
+      const galleryClose=page.lastIndexOf('</div>', articleClose);
+      if(articleClose<0 || galleryOpen<0 || galleryClose<galleryOpen) throw new Error('The French camping gallery was not found. No files were changed.');
+      const stamp=new Date(); const year=String(stamp.getFullYear()); const month=String(stamp.getMonth()+1).padStart(2,'0');
+      const batch=stamp.toISOString().replace(/[-:.TZ]/g,'').slice(0,14);
+      const media=await folder.getDirectoryHandle('media',{create:true});
+      const yearDir=await media.getDirectoryHandle(year,{create:true});
+      const monthDir=await yearDir.getDirectoryHandle(month,{create:true});
+      const prepared=[]; const reserved=new Set();
+      for(let index=0;index<photos.length;index++) {
+        const item=photos[index]; const caption=item.caption.trim();
+        if(!caption) throw new Error(`Add a description for ${item.file.name} before saving. No files were changed.`);
+        const blob=await resize(item.file);
+        const base=slug(item.file.name.replace(/\.[^.]+$/,''));
+        let filename=`${base}.jpg`; let suffix=2;
+        while(reserved.has(filename) || await nameExists(monthDir,filename)) filename=`${base}-${suffix++}.jpg`;
+        reserved.add(filename);
+        prepared.push({blob,filename,caption});
+      }
+      const links=prepared.map(({filename,caption})=>{const path=`media/${year}/${month}/${filename}`; return `<a href="${path}" class="gallery-photo"><img alt="${escapeHtml(caption)}" loading="lazy" src="${path}"/></a>`;}).join('\n');
+      const block=`\n<!-- PHOTO TOOL: ${batch} -->\n${links}\n<!-- END PHOTO TOOL: ${batch} -->\n`;
+      const updated=page.slice(0,galleryClose)+block+page.slice(galleryClose);
+      const backup=await folder.getFileHandle(`french-camping.backup-${batch}.html`,{create:true});
+      await write(backup,page);
+      status('Saving photos…');
+      for(const item of prepared) await write(await monthDir.getFileHandle(item.filename,{create:true}),item.blob);
+      await write(pageHandle,updated);
+      photos.forEach(item=>URL.revokeObjectURL(item.url)); photos.length=0; render();
+      status(`${prepared.length} photo(s) added to french-camping.html. Refresh your local site to see them. A backup of the previous page is in the website folder.`, 'success');
+    } catch(error) { status('Save stopped: '+(error.message || String(error)), 'error'); }
+    finally { ready(); }
+  });
+})();
+</script>
+</body>
+</html>

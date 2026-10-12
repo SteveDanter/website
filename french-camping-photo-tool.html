@@ -10,7 +10,7 @@
 </head>
 <body>
 <main>
-  <header><h1>Add camping photos</h1><p>Drop in photos, add captions, and save them into your website.</p></header>
+  <header><h1>Add camping photos</h1><p>Drop in photos, add descriptions if you wish, and save them into your website.</p></header>
   <section class="panel"><h2><span class="step">1</span>Choose your website folder</h2><div class="row"><button id="chooseFolder">Choose folder</button><span id="folderName">No folder selected</span></div><p class="hint">Choose <b>C:\Website\steve-life-site\webpages</b>, the folder containing <b>french-camping.html</b> and <b>media</b>. The tool changes files only when you click Save.</p></section>
   <section class="panel"><h2><span class="step">2</span>Add photos</h2><div id="drop" role="button" tabindex="0" aria-label="Drop photos here or choose files"><strong>Drop photos here</strong><small>or click to choose JPEG, PNG, or WebP images</small></div><input id="files" type="file" accept="image/jpeg,image/png,image/webp" multiple><div id="photos" class="photos"></div></section>
   <section class="panel"><h2><span class="step">3</span>Save to the page</h2><p class="hint">Images are resized to a maximum of 2000 pixels and saved as JPEG using their original names. If a name already exists, a number is added. A backup of the page is made first.</p><div class="row" style="margin-top:18px"><button id="save" disabled>Save photos and update page</button><button id="clear" class="secondary" disabled>Clear list</button></div><p id="status" role="status">Choose your website folder and add photos to begin.</p></section>
@@ -31,8 +31,8 @@
       const img = document.createElement('img'); img.src = item.url; img.alt = '';
       const fields = document.createElement('div');
       const name = document.createElement('p'); name.className = 'name'; name.textContent = item.file.name;
-      const label = document.createElement('label'); label.textContent = 'Photo description'; label.htmlFor = 'caption-' + index;
-      const input = document.createElement('input'); input.id = label.htmlFor; input.value = item.caption; input.placeholder = 'What does this photo show?';
+      const label = document.createElement('label'); label.textContent = 'Photo description (optional)'; label.htmlFor = 'caption-' + index;
+      const input = document.createElement('input'); input.id = label.htmlFor; input.value = item.caption; input.placeholder = 'Leave blank or describe this photo';
       input.addEventListener('input', () => item.caption = input.value);
       fields.append(name,label,input);
       const remove = document.createElement('button'); remove.className = 'secondary'; remove.textContent = 'Remove'; remove.setAttribute('aria-label','Remove '+item.file.name);
@@ -48,7 +48,7 @@
       photos.push({file,caption:'',url:URL.createObjectURL(file)});
     }
     render();
-    status(rejected ? `${rejected} unsupported file(s) skipped. JPEG, PNG and WebP work here.` : `${photos.length} photo(s) ready. Add a short description for each.`, rejected ? 'error' : '');
+    status(rejected ? `${rejected} unsupported file(s) skipped. JPEG, PNG and WebP work here.` : `${photos.length} photo(s) ready. Descriptions are optional. You can save these photos as they are.`, rejected ? 'error' : '');
   }
   $('chooseFolder').addEventListener('click', async () => {
     try {
@@ -100,7 +100,6 @@
       const prepared=[]; const reserved=new Set();
       for(let index=0;index<photos.length;index++) {
         const item=photos[index]; const caption=item.caption.trim();
-        if(!caption) throw new Error(`Add a description for ${item.file.name} before saving. No files were changed.`);
         const blob=await resize(item.file);
         const base=slug(item.file.name.replace(/\.[^.]+$/,''));
         let filename=`${base}.jpg`; let suffix=2;
@@ -108,7 +107,7 @@
         reserved.add(filename);
         prepared.push({blob,filename,caption});
       }
-      const links=prepared.map(({filename,caption})=>{const path=`media/${year}/${month}/${filename}`; return `<a href="${path}" class="gallery-photo"><img alt="${escapeHtml(caption)}" loading="lazy" src="${path}"/></a>`;}).join('\n');
+      const links=prepared.map(({filename,caption})=>{const path=`media/${year}/${month}/${filename}`; return `<a href="${path}" class="gallery-photo"><img alt="${escapeHtml(caption || "Camping holiday photograph")}" loading="lazy" src="${path}"/></a>`;}).join('\n');
       const block=`\n<!-- PHOTO TOOL: ${batch} -->\n${links}\n<!-- END PHOTO TOOL: ${batch} -->\n`;
       const updated=page.slice(0,galleryClose)+block+page.slice(galleryClose);
       const backup=await folder.getFileHandle(`french-camping.backup-${batch}.html`,{create:true});
