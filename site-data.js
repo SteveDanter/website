@@ -245,7 +245,7 @@ window.SITE_PAGES = [
     "title": "Campsites",
     "category": "travel",
     "excerpt": "Camping… These days I almost always go to the west coast of France. When people ask which part I go to I always describe it as “about half way down, on the left coast by Bordeaux”",
-    "image": "media/2024/04/lesmathes.png"
+    "image": "media/2026/10/20260318-135902.jpg"
   },
   {
     "slug": "france-2023",
@@ -274,9 +274,9 @@ window.SITE_PAGES = [
   {
     "slug": "photos-from-france",
     "file": "french-camping.html",
-    "title": "Photo's of France",
+    "title": "Photo's from my travels",
     "category": "travel",
-    "excerpt": "Some photo's I've taken over the years of sights that have grabbed my attention and piqued my interest while in France.",
+    "excerpt": "Some photo's I've taken over the years of sights that have grabbed my attention and piqued my interest while travelling, mainly in France.",
     "image": "media/2024/07/lighthouse.png"
   },
   {
